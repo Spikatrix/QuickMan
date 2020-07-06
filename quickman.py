@@ -19,6 +19,7 @@ class QuickMan:
     def print_flag_option(self, man_output, line_index):
         if self.print_flag_option_header:
             print("SPECIFIED FLAGS AND OPTIONS")
+            self.print_flag_option_header = False
 
         first_line = True 
         while line_index < len(man_output) and man_output[line_index]:
@@ -43,8 +44,7 @@ class QuickMan:
         return actual_args
 
     def check_flag_option(self, man_output, line_indices, args):
-        self.print_flag_option_header = False
-        first_flag_option = True 
+        self.print_flag_option_header = True
         args = self.get_separated_args(args)
         for arg in args:
             for index in line_indices:
@@ -62,7 +62,6 @@ class QuickMan:
                             or not man_arg[len(arg) + 2].isalpha()
                             and man_arg[len(arg) + 2] != '-'))):
                         self.print_flag_option(man_output, index)
-                        first_flag_option = False
                         next_arg = True
                         break
                 if next_arg:
