@@ -81,7 +81,8 @@ class QuickMan:
             self.print_help()
             return
 
-        man_command_output = subprocess.run(['env', 'COLUMNS=32767', 'man', command[0]], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        man_command_output = subprocess.run(['env', 'COLUMNS=32767', 'man', command[0]], 
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         man_output = man_command_output.stdout.decode('utf-8').strip().split("\n")
         man_error = man_command_output.stderr.decode('utf-8').strip()
 

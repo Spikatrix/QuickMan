@@ -1,4 +1,4 @@
-# QuickMan &nbsp; [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+# QuickMan &nbsp; [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](https://github.com/Spikatrix/QuickMan/blob/master/LICENSE)
 
 Displays a subset of the `man` page output with information on the specified flags and options. Requires python3 to run.
 
