@@ -36,7 +36,12 @@ class QuickMan:
         actual_args = []
         for arg in args:
             if arg.startswith("--") and len(arg) > 3:
-                actual_args.append(arg[2:])
+                index = 0
+                for arg_char in arg:
+                    if not arg_char.isalpha() and arg_char != '-':
+                        break
+                    index += 1
+                actual_args.append(arg[2:index])
             elif arg[0] == '-':
                 sub_arg_list = [sub_arg for sub_arg in arg[1:] if sub_arg.isalpha()]
                 if len(sub_arg_list) == len(arg) - 1:
