@@ -61,7 +61,7 @@ class QuickMan:
                         continue
                     elif man_arg[0] != '-':
                         break
-                    if ((len(arg) == 1 and arg == man_arg[1:]) or
+                    if ((len(arg) == 1 and arg == man_arg[1]) or
                         (len(arg) != 1 and man_arg[2:].startswith(arg)
                             and (len(man_arg) <= (len(arg) + 2)
                             or not man_arg[len(arg) + 2].isalpha()
